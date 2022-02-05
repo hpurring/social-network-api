@@ -9,7 +9,7 @@ const thoughtController = {
             })
             .select('-__v')
             .sort({ _id: -1 })
-            .then(dbPizzaData => res.json(dbPizzaData))
+            .then(dbThoughtData => res.json(dbThoughtData))
             .catch(err => {
                 console.log(err);
                 res.status(400).json(err);
@@ -67,13 +67,26 @@ const thoughtController = {
     },
 
     deleteThought({ params }, res) {
-        Thought.findOneAndDelete({ _id: params.id })
-        .then(dbThoughtData => {
-            if (!dbThoughtData) {
+        Thought.findOneAndDelete({ _id: params.thoughtId })
+        .then(deletedThought => {
+            if (!deletedThought) {
                 res.status(404).json({ message: 'No thought found with this id!'});
                 return;
             }
+            return User.findOneAndUpdate(
+                { _id: params.userId },
+                { $pull: { thoughts: params.thoughtId } },
+                { new: true }
+            )
         })
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(404).json({ message: 'No user found with this id!' });
+                return;
+            }
+            res.json(dbUserData);
+        })
+        .catch(err => res.json(err));
     },
 
     addReaction({ params, body }, res) {
@@ -82,23 +95,23 @@ const thoughtController = {
             { $push: { reactions: body } },
             { new: true, runValidators: true }
         )
-        .then(dbThoughtData => {
-            if (!dbThoughtData) {
-                res.status(404).json({ message: 'No thought found with this id!'});
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(404).json({ message: 'No user found with this id!'});
                 return;
             }
-            res.json(dbThoughtData);
+            res.json(dbUserData);
         })
         .catch(err => res.json(err));
     },
 
     removeReaction({ params }, res) {
         Thought.findOneAndUpdate(
-            { _id: params.params.thoughtId },
+            { _id: params.thoughtId },
             { $pull: { reactions: { reactionId: params.reactionId } } },
-            {new: true }
+            { new: true }
         )
-        .then(dbThoughtData => res.json(dbThoughtData))
+        .then(dbUserData => res.json(dbUserData))
         .catch(err => res.json(err));
     }
 }

@@ -22,8 +22,13 @@ const reactionSchema = new Schema(
             default: Date.now,
             get: createdAtVal => dateFormat(createdAtVal)
         } 
+    },
+    {
+        toJSON: {
+            getters: true
+        }
     }
-)
+);
 
 const ThoughtSchema = new Schema(
     {
@@ -45,8 +50,14 @@ const ThoughtSchema = new Schema(
             trim: true
         },
         reactions: [reactionSchema]
+    },
+    {
+        toJSON: {
+            getters: true
+        }
     }
 );
 
 const Thought = model('Thought', ThoughtSchema);
+
 module.exports = Thought;
