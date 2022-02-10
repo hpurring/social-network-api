@@ -4,9 +4,9 @@ const thoughtController = {
     // get thoughts
     getAllThoughts(req, res) {
         Thought.find({})
-            .populate({
-                select: '-__v'
-            })
+            // .populate({
+            //     select: '-__v'
+            // })
             .select('-__v')
             .sort({ _id: -1 })
             .then(dbThoughtData => res.json(dbThoughtData))
@@ -17,10 +17,7 @@ const thoughtController = {
     },
 
     getThoughtById({ params }, res) {
-        Thought.findOne({ _id: params.id })
-            .populate({
-                select: '-__v'
-            })
+        Thought.findOne({ _id: params.thoughtId })
             .select('-__v')
             .then(dbThoughtData => {
                 if (!dbThoughtData) {
@@ -55,7 +52,7 @@ const thoughtController = {
     },
 
     updateThought({ params, body }, res) {
-        Thought.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
+        Thought.findByIdAndUpdate({ _id: params.thoughtId }, body, { new: true, runValidators: true })
         .then(dbThoughtData => {
             if (!dbThoughtData) {
                 res.status(404).json({ message: 'No thought found with this id!'});
