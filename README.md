@@ -21,7 +21,7 @@
   ## Usage
   Check out the demo video, which demonstrates the API's full capabilities: 
   
-  ![blech!]()
+  ![blech!](https://github.com/hpurring/social-network-api/blob/main/assets/social-network-screenshot.png)
   [Test it out!](https://drive.google.com/file/d/1BL9awgGGavnkaeKaf5BxIFNAE-42jfJm/view?usp=sharing)
 
 
