@@ -1,15 +1,45 @@
-# social-network-api
 
-The walkthrough video must show all of the technical acceptance criteria being met.
+  
+  # Social Network API
 
-The walkthrough video must demonstrate how to start the application’s server.
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- The walkthrough video must demonstrate GET routes for all users and all thoughts being tested in Insomnia.
+  This project is a social network API that allows for the creation of user profiles. Users are then able to make friends, create "thoughts", and comment on other users' thoughts.
 
-- The walkthrough video must demonstrate GET routes for a single user and a single thought being tested in Insomnia.
+  Built with MongoDB, Node.js, Express.js, and JavaScript.
 
-The walkthrough video must demonstrate POST, PUT, and DELETE routes for users and thoughts being tested in Insomnia.
+  ## Table of Contents
+  * [Usage](#usage)
+  * [Credits](#credits)
+  * [License](#license)
+  * [Features](#features)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
 
-Walkthrough video must demonstrate POST and DELETE routes for a user’s friend list being tested in Insomnia.
 
-Walkthrough video must demonstrate POST and DELETE routes for reactions to thoughts being tested in Insomnia.- 
+  ## Usage
+  Check out the demo video, which demonstrates the API's full capabilities: 
+  
+  ![blech!]()
+  [Test it out!](https://drive.google.com/file/d/1BL9awgGGavnkaeKaf5BxIFNAE-42jfJm/view?usp=sharing)
+
+
+  ## Credits
+  None.
+
+  ## License 
+  [MIT](https://choosealicense.com/licenses/mit/)
+
+  ## Features
+  n/a
+
+  ## Contributing
+  Not currently open for contributions.
+
+  ## Tests
+  n/a
+
+  ## Questions
+  Questions? Contact me via [GitHub](https://github.com/hpurring) or [by email](mailto:hilarypurrington@gmail.com).
+
