@@ -22,7 +22,8 @@
   Check out the demo video, which demonstrates the API's full capabilities: 
   
   ![blech!](https://github.com/hpurring/social-network-api/blob/main/assets/social-network-screenshot.png)
-  [Test it out!](https://drive.google.com/file/d/1BL9awgGGavnkaeKaf5BxIFNAE-42jfJm/view?usp=sharing)
+  [Part 1](https://drive.google.com/file/d/1BL9awgGGavnkaeKaf5BxIFNAE-42jfJm/view?usp=sharing)
+  [Part 2](https://drive.google.com/file/d/1nC8pnKjeLuRhDCCSWWAIIpN0Bzq74ueB/view?usp=sharing)
 
 
   ## Credits
